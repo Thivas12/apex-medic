@@ -1,0 +1,88 @@
+name: ApexMedic tests
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: apex-tests-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: Python, PostgreSQL and browser tests
+    # Public repositories use a free standard runner. Private repositories
+    # must opt in after configuring the spending limit described in the CI guide.
+    if: ${{ github.event.repository.private == false || vars.APEX_CI_ENABLED == 'true' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      APEX_DATABASE_BACKEND: sqlite
+      APEX_LLM_PROVIDER: ollama
+      # Synthetic credentials for the disposable service below, never Neon.
+      APEX_TEST_POSTGRES_URL: postgresql://apex_test:ci_test_only@127.0.0.1:5432/apexmedic_test_ci
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUNBUFFERED: '1'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_USER: apex_test
+          POSTGRES_PASSWORD: ci_test_only
+          POSTGRES_DB: apexmedic_test_ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U apex_test -d apexmedic_test_ci"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - name: Check out source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version-file: .python-version
+
+      - name: Set up Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+
+      - name: Install Python dependencies
+        run: python -m pip install --no-cache-dir -r requirements.txt
+
+      - name: Run Python tests including PostgreSQL
+        run: |
+          python - <<'PY'
+          import sys
+          import unittest
+
+          suite = unittest.defaultTestLoader.discover("tests")
+          result = unittest.TextTestRunner(verbosity=2).run(suite)
+          if result.skipped:
+              print("CI requires every test to run; unexpected skips were reported.", file=sys.stderr)
+          if not result.testsRun:
+              print("CI did not discover any Python tests.", file=sys.stderr)
+          raise SystemExit(0 if result.wasSuccessful() and result.testsRun and not result.skipped else 1)
+          PY
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check frontend/app.js
+          node --check frontend/manage.js
+
+      - name: Run browser control tests
+        run: node --test tests/test_manage_page.cjs

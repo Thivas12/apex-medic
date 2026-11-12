@@ -1,0 +1,556 @@
+{
+  "started_at": "2026-11-10T13:38:52.216591+00:00",
+  "configured_model": "qwen3:4b-instruct-2507-q4_K_M",
+  "suite": "fresh-v1",
+  "configured_prompt_version": "explain-v3",
+  "knowledge_revision": "3f4b4eed378c2fe1ff4f0ca3c3885c37aaf42b1928040a69875301e8a2398ab9",
+  "latency_note": "Elapsed client time; model residency/cache not controlled.",
+  "results": [
+    {
+      "scenario": "latency_reading_missing",
+      "case": {
+        "case_id": "eval_latency_reading_missing",
+        "origin": "synthetic",
+        "platform": "windows_pc",
+        "symptom": "high_latency",
+        "player_description": "Synthetic demo: high ping is reported.",
+        "connection_type": "ethernet",
+        "data_center": null,
+        "onset": null,
+        "observations": [
+          {
+            "source": "player_report",
+            "context": "Synthetic affected-match reading",
+            "latency_ms": null,
+            "packet_loss_pct": 0.0,
+            "fps": 144.0
+          }
+        ],
+        "completed_tests": [],
+        "confirmed_cause": null,
+        "status": "investigating"
+      },
+      "decision": {
+        "case_id": "eval_latency_reading_missing",
+        "case_origin": "synthetic",
+        "policy_version": "rules-v1",
+        "kind": "question",
+        "action_id": "collect_performance_readings",
+        "message": "Enable Performance Display and record readings during an affected match.",
+        "reason": "The most recently recorded observation is missing: latency_ms",
+        "source_ids": [
+          "ea_connection_guide"
+        ],
+        "knowledge_revision": "3f4b4eed378c2fe1ff4f0ca3c3885c37aaf42b1928040a69875301e8a2398ab9",
+        "guidance": [
+          {
+            "card_id": "performance_display",
+            "title": "Find the in-game measurements",
+            "basis": "official_guidance",
+            "text": "In Apex settings, open Gameplay and enable Performance Display to see FPS, latency and packet loss.",
+            "citations": [
+              {
+                "source_id": "ea_connection_guide",
+                "title": "Troubleshoot high ping, packet loss, and lag in Apex Legends",
+                "url": "https://help.ea.com/en/articles/apex-legends/troubleshoot-ping-packet-loss-lag/",
+                "publisher": "EA Help",
+                "source_type": "official_guidance",
+                "reviewed_on": "2026-11-09",
+                "topics": [
+                  "performance_display",
+                  "latency",
+                  "packet_loss",
+                  "data_center_selection"
+                ]
+              }
+            ]
+          }
+        ],
+        "decision_token": "7812e227c3428ba6b5a406b1284ec93e0f80977a3a5e0ed02271af43d1a42be2"
+      },
+      "review": {
+        "action_preserved": null,
+        "no_unsupported_claims": null,
+        "uncertainty_preserved": null,
+        "notes": ""
+      },
+      "status": "valid_output",
+      "explanation": "Enable Performance Display in Apex settings under Gameplay to see FPS, latency, and packet loss. Record these readings during an affected match because the most recent observation is missing the latency_ms value. This helps identify performance issues during gameplay.",
+      "source": "model",
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "prompt_version": "explain-v3",
+      "word_count": 39,
+      "elapsed_s": 0.941
+    },
+    {
+      "scenario": "rubber_banding_readings_missing",
+      "case": {
+        "case_id": "eval_rubber_banding_readings_missing",
+        "origin": "synthetic",
+        "platform": "windows_pc",
+        "symptom": "rubber_banding",
+        "player_description": "Synthetic demo: players teleport in Apex.",
+        "connection_type": "ethernet",
+        "data_center": null,
+        "onset": null,
+        "observations": [
+          {
+            "source": "player_report",
+            "context": "Synthetic affected-match reading",
+            "latency_ms": null,
+            "packet_loss_pct": null,
+            "fps": 144.0
+          }
+        ],
+        "completed_tests": [],
+        "confirmed_cause": null,
+        "status": "investigating"
+      },
+      "decision": {
+        "case_id": "eval_rubber_banding_readings_missing",
+        "case_origin": "synthetic",
+        "policy_version": "rules-v1",
+        "kind": "question",
+        "action_id": "collect_performance_readings",
+        "message": "Enable Performance Display and record readings during an affected match.",
+        "reason": "The most recently recorded observation is missing: latency_ms, packet_loss_pct",
+        "source_ids": [
+          "ea_connection_guide"
+        ],
+        "knowledge_revision": "3f4b4eed378c2fe1ff4f0ca3c3885c37aaf42b1928040a69875301e8a2398ab9",
+        "guidance": [
+          {
+            "card_id": "performance_display",
+            "title": "Find the in-game measurements",
+            "basis": "official_guidance",
+            "text": "In Apex settings, open Gameplay and enable Performance Display to see FPS, latency and packet loss.",
+            "citations": [
+              {
+                "source_id": "ea_connection_guide",
+                "title": "Troubleshoot high ping, packet loss, and lag in Apex Legends",
+                "url": "https://help.ea.com/en/articles/apex-legends/troubleshoot-ping-packet-loss-lag/",
+                "publisher": "EA Help",
+                "source_type": "official_guidance",
+                "reviewed_on": "2026-11-09",
+                "topics": [
+                  "performance_display",
+                  "latency",
+                  "packet_loss",
+                  "data_center_selection"
+                ]
+              }
+            ]
+          }
+        ],
+        "decision_token": "82dec7526caa29366e96f4136a9546a02952b5bf1d55b2d30417b34b594d7cc3"
+      },
+      "review": {
+        "action_preserved": null,
+        "no_unsupported_claims": null,
+        "uncertainty_preserved": null,
+        "notes": ""
+      },
+      "status": "valid_output",
+      "explanation": "Enable Performance Display in Apex settings under Gameplay to see real-time FPS, latency, and packet loss during a match. Record these values during an affected game because the latest observation is missing latency_ms and packet_loss_pct.",
+      "source": "model",
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "prompt_version": "explain-v3",
+      "word_count": 35,
+      "elapsed_s": 0.879
+    },
+    {
+      "scenario": "background_comparison_improved",
+      "case": {
+        "case_id": "eval_background_comparison_improved",
+        "origin": "synthetic",
+        "platform": "windows_pc",
+        "symptom": "packet_loss",
+        "player_description": "Synthetic demo: players teleport in Apex.",
+        "connection_type": "ethernet",
+        "data_center": null,
+        "onset": null,
+        "observations": [
+          {
+            "source": "player_report",
+            "context": "Synthetic affected-match reading",
+            "latency_ms": 55.0,
+            "packet_loss_pct": 8.0,
+            "fps": 144.0
+          }
+        ],
+        "completed_tests": [
+          {
+            "test_id": "compare_data_centers",
+            "conditions": "Synthetic comparable session; other conditions unchanged",
+            "outcome": "unchanged",
+            "notes": "Synthetic reported result; the underlying cause is unknown."
+          },
+          {
+            "test_id": "compare_background_traffic",
+            "conditions": "Synthetic comparable session; other conditions unchanged",
+            "outcome": "improved",
+            "notes": "Synthetic reported result; the underlying cause is unknown."
+          }
+        ],
+        "confirmed_cause": null,
+        "status": "investigating"
+      },
+      "decision": {
+        "case_id": "eval_background_comparison_improved",
+        "case_origin": "synthetic",
+        "policy_version": "rules-v1",
+        "kind": "test",
+        "action_id": "verify_improvement",
+        "message": "Keep the settings associated with the reported improvement. Collect another comparable session's readings. Compare them with the original affected baseline and record the result under test_id 'verify_improvement'.",
+        "reason": "'compare_background_traffic' reports improvement, but repeatability has not been checked.",
+        "source_ids": [],
+        "knowledge_revision": "3f4b4eed378c2fe1ff4f0ca3c3885c37aaf42b1928040a69875301e8a2398ab9",
+        "guidance": [
+          {
+            "card_id": "repeat_verification",
+            "title": "Check whether improvement repeats",
+            "basis": "project_policy",
+            "text": "Compare another similar session with the original affected baseline. Record any remaining symptoms. Repeated reported improvement does not establish a root cause or automatically resolve the case.",
+            "citations": []
+          }
+        ],
+        "decision_token": "4fb71b836ce80ccc9d81ef5c397829fdcaca3dc689d0b0dd47788c28e67d2c17"
+      },
+      "review": {
+        "action_preserved": null,
+        "no_unsupported_claims": null,
+        "uncertainty_preserved": null,
+        "notes": ""
+      },
+      "status": "valid_output",
+      "explanation": "Keep the same settings that were reported to improve symptoms. Run another session with similar conditions, collect its readings, and compare them to the original baseline. Record the result under test_id 'verify_improvement'. This checks if the improvement repeats, but it does not confirm the cause or solve the case.",
+      "source": "model",
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "prompt_version": "explain-v3",
+      "word_count": 49,
+      "elapsed_s": 1.125
+    },
+    {
+      "scenario": "background_comparison_worsened",
+      "case": {
+        "case_id": "eval_background_comparison_worsened",
+        "origin": "synthetic",
+        "platform": "windows_pc",
+        "symptom": "packet_loss",
+        "player_description": "Synthetic demo: players teleport in Apex.",
+        "connection_type": "ethernet",
+        "data_center": null,
+        "onset": null,
+        "observations": [
+          {
+            "source": "player_report",
+            "context": "Synthetic affected-match reading",
+            "latency_ms": 55.0,
+            "packet_loss_pct": 8.0,
+            "fps": 144.0
+          }
+        ],
+        "completed_tests": [
+          {
+            "test_id": "compare_data_centers",
+            "conditions": "Synthetic comparable session; other conditions unchanged",
+            "outcome": "unchanged",
+            "notes": "Synthetic reported result; the underlying cause is unknown."
+          },
+          {
+            "test_id": "compare_background_traffic",
+            "conditions": "Synthetic comparable session; other conditions unchanged",
+            "outcome": "worsened",
+            "notes": "Synthetic reported result; the underlying cause is unknown."
+          }
+        ],
+        "confirmed_cause": null,
+        "status": "investigating"
+      },
+      "decision": {
+        "case_id": "eval_background_comparison_worsened",
+        "case_origin": "synthetic",
+        "policy_version": "rules-v1",
+        "kind": "question",
+        "action_id": "clarify_test_result",
+        "message": "What changed during this test, and what readings were recorded before and after it?",
+        "reason": "'compare_background_traffic' was recorded as 'worsened'. Clarify that result before recommending another change.",
+        "source_ids": [],
+        "knowledge_revision": "3f4b4eed378c2fe1ff4f0ca3c3885c37aaf42b1928040a69875301e8a2398ab9",
+        "guidance": [],
+        "decision_token": "43d6139ca02aedf14117ad5886c3925010d474cf4e07b2488250f5d32bc7e5a4"
+      },
+      "review": {
+        "action_preserved": null,
+        "no_unsupported_claims": null,
+        "uncertainty_preserved": null,
+        "notes": ""
+      },
+      "status": "valid_output",
+      "explanation": "The test result for background traffic showed a worsening. To understand why, please share what changed during the test and the readings recorded before and after it.",
+      "source": "model",
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "prompt_version": "explain-v3",
+      "word_count": 27,
+      "elapsed_s": 0.673
+    },
+    {
+      "scenario": "background_comparison_inconclusive",
+      "case": {
+        "case_id": "eval_background_comparison_inconclusive",
+        "origin": "synthetic",
+        "platform": "windows_pc",
+        "symptom": "packet_loss",
+        "player_description": "Synthetic demo: players teleport in Apex.",
+        "connection_type": "ethernet",
+        "data_center": null,
+        "onset": null,
+        "observations": [
+          {
+            "source": "player_report",
+            "context": "Synthetic affected-match reading",
+            "latency_ms": 55.0,
+            "packet_loss_pct": 8.0,
+            "fps": 144.0
+          }
+        ],
+        "completed_tests": [
+          {
+            "test_id": "compare_data_centers",
+            "conditions": "Synthetic comparable session; other conditions unchanged",
+            "outcome": "unchanged",
+            "notes": "Synthetic reported result; the underlying cause is unknown."
+          },
+          {
+            "test_id": "compare_background_traffic",
+            "conditions": "Synthetic comparable session; other conditions unchanged",
+            "outcome": "inconclusive",
+            "notes": "Synthetic reported result; the underlying cause is unknown."
+          }
+        ],
+        "confirmed_cause": null,
+        "status": "investigating"
+      },
+      "decision": {
+        "case_id": "eval_background_comparison_inconclusive",
+        "case_origin": "synthetic",
+        "policy_version": "rules-v1",
+        "kind": "question",
+        "action_id": "clarify_test_result",
+        "message": "What changed during this test, and what readings were recorded before and after it?",
+        "reason": "'compare_background_traffic' was recorded as 'inconclusive'. Clarify that result before recommending another change.",
+        "source_ids": [],
+        "knowledge_revision": "3f4b4eed378c2fe1ff4f0ca3c3885c37aaf42b1928040a69875301e8a2398ab9",
+        "guidance": [],
+        "decision_token": "ed30e52e1b3278894f0e96f7f94b4d0c17df3785373d07a170e0afc2c709e223"
+      },
+      "review": {
+        "action_preserved": null,
+        "no_unsupported_claims": null,
+        "uncertainty_preserved": null,
+        "notes": ""
+      },
+      "status": "valid_output",
+      "explanation": "To clarify the 'compare_background_traffic' result, please tell us what changed during the test and share the readings recorded before and after it. This will help us understand the result better and guide the next step.",
+      "source": "model",
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "prompt_version": "explain-v3",
+      "word_count": 35,
+      "elapsed_s": 0.834
+    },
+    {
+      "scenario": "verification_worsened",
+      "case": {
+        "case_id": "eval_verification_worsened",
+        "origin": "synthetic",
+        "platform": "windows_pc",
+        "symptom": "packet_loss",
+        "player_description": "Synthetic demo: players teleport in Apex.",
+        "connection_type": "ethernet",
+        "data_center": null,
+        "onset": null,
+        "observations": [
+          {
+            "source": "player_report",
+            "context": "Synthetic affected-match reading",
+            "latency_ms": 55.0,
+            "packet_loss_pct": 8.0,
+            "fps": 144.0
+          }
+        ],
+        "completed_tests": [
+          {
+            "test_id": "compare_data_centers",
+            "conditions": "Synthetic comparable session; other conditions unchanged",
+            "outcome": "improved",
+            "notes": "Synthetic reported result; the underlying cause is unknown."
+          },
+          {
+            "test_id": "verify_improvement",
+            "conditions": "Synthetic comparable session; other conditions unchanged",
+            "outcome": "worsened",
+            "notes": "Synthetic reported result; the underlying cause is unknown."
+          }
+        ],
+        "confirmed_cause": null,
+        "status": "investigating"
+      },
+      "decision": {
+        "case_id": "eval_verification_worsened",
+        "case_origin": "synthetic",
+        "policy_version": "rules-v1",
+        "kind": "report",
+        "action_id": "review_verification",
+        "message": "Summarise the verification readings and any remaining symptoms. This policy does not establish a root cause.",
+        "reason": "The most recently recorded verification outcome is 'worsened'.",
+        "source_ids": [],
+        "knowledge_revision": "3f4b4eed378c2fe1ff4f0ca3c3885c37aaf42b1928040a69875301e8a2398ab9",
+        "guidance": [
+          {
+            "card_id": "verification_review",
+            "title": "Review verification findings",
+            "basis": "project_policy",
+            "text": "Summarise the recorded verification result and any remaining symptoms. Distinguish reported improvement from measured changes. Repeated reported improvement does not establish the underlying cause or automatically resolve the case.",
+            "citations": []
+          }
+        ],
+        "decision_token": "e88b984541dabf23dbd89e89b71c1b6954157934d2747a770c0163c28591bf79"
+      },
+      "review": {
+        "action_preserved": null,
+        "no_unsupported_claims": null,
+        "uncertainty_preserved": null,
+        "notes": ""
+      },
+      "status": "valid_output",
+      "explanation": "Summarise the verification readings and any remaining symptoms. This policy does not establish a root cause.\n\nThe most recently recorded verification outcome is 'worsened'.",
+      "source": "reviewed_guidance",
+      "model": null,
+      "prompt_version": null,
+      "word_count": 24,
+      "elapsed_s": 0.0
+    },
+    {
+      "scenario": "comparisons_exhausted",
+      "case": {
+        "case_id": "eval_comparisons_exhausted",
+        "origin": "synthetic",
+        "platform": "windows_pc",
+        "symptom": "packet_loss",
+        "player_description": "Synthetic demo: players teleport in Apex.",
+        "connection_type": "ethernet",
+        "data_center": null,
+        "onset": null,
+        "observations": [
+          {
+            "source": "player_report",
+            "context": "Synthetic affected-match reading",
+            "latency_ms": 55.0,
+            "packet_loss_pct": 8.0,
+            "fps": 144.0
+          }
+        ],
+        "completed_tests": [
+          {
+            "test_id": "compare_data_centers",
+            "conditions": "Synthetic comparable session; other conditions unchanged",
+            "outcome": "unchanged",
+            "notes": "Synthetic reported result; the underlying cause is unknown."
+          },
+          {
+            "test_id": "compare_background_traffic",
+            "conditions": "Synthetic comparable session; other conditions unchanged",
+            "outcome": "unchanged",
+            "notes": "Synthetic reported result; the underlying cause is unknown."
+          }
+        ],
+        "confirmed_cause": null,
+        "status": "investigating"
+      },
+      "decision": {
+        "case_id": "eval_comparisons_exhausted",
+        "case_origin": "synthetic",
+        "policy_version": "rules-v1",
+        "kind": "report",
+        "action_id": "summarise_unresolved",
+        "message": "Summarise the observations, completed comparisons, and remaining uncertainty.",
+        "reason": "The current comparison catalogue is exhausted without a verified improvement.",
+        "source_ids": [],
+        "knowledge_revision": "3f4b4eed378c2fe1ff4f0ca3c3885c37aaf42b1928040a69875301e8a2398ab9",
+        "guidance": [],
+        "decision_token": "32cacb43bcd8872e2b4066c82e860cde4c66bab58369afc9111e433256a5d9ec"
+      },
+      "review": {
+        "action_preserved": null,
+        "no_unsupported_claims": null,
+        "uncertainty_preserved": null,
+        "notes": ""
+      },
+      "status": "valid_output",
+      "explanation": "Summarise the observations, completed comparisons, and remaining uncertainty.\n\nThe current comparison catalogue is exhausted without a verified improvement.",
+      "source": "reviewed_guidance",
+      "model": null,
+      "prompt_version": null,
+      "word_count": 18,
+      "elapsed_s": 0.0
+    },
+    {
+      "scenario": "unsupported_test_reported_improved",
+      "case": {
+        "case_id": "eval_unsupported_test_reported_improved",
+        "origin": "synthetic",
+        "platform": "windows_pc",
+        "symptom": "packet_loss",
+        "player_description": "Synthetic demo: players teleport in Apex.",
+        "connection_type": "ethernet",
+        "data_center": null,
+        "onset": null,
+        "observations": [
+          {
+            "source": "player_report",
+            "context": "Synthetic affected-match reading",
+            "latency_ms": 55.0,
+            "packet_loss_pct": 8.0,
+            "fps": 144.0
+          }
+        ],
+        "completed_tests": [
+          {
+            "test_id": "unreviewed_tweak",
+            "conditions": "Synthetic comparable session; other conditions unchanged",
+            "outcome": "improved",
+            "notes": "Synthetic reported result; the underlying cause is unknown."
+          }
+        ],
+        "confirmed_cause": null,
+        "status": "investigating"
+      },
+      "decision": {
+        "case_id": "eval_unsupported_test_reported_improved",
+        "case_origin": "synthetic",
+        "policy_version": "rules-v1",
+        "kind": "report",
+        "action_id": "review_unsupported_test",
+        "message": "Review this procedure before recommending further changes.",
+        "reason": "'unreviewed_tweak' is outside this prototype's test catalogue.",
+        "source_ids": [],
+        "knowledge_revision": "3f4b4eed378c2fe1ff4f0ca3c3885c37aaf42b1928040a69875301e8a2398ab9",
+        "guidance": [],
+        "decision_token": "73cad8c1e52b623b28e35732a992225f5d954bc0f54ccc3427d1daf77ef2a525"
+      },
+      "review": {
+        "action_preserved": null,
+        "no_unsupported_claims": null,
+        "uncertainty_preserved": null,
+        "notes": ""
+      },
+      "status": "valid_output",
+      "explanation": "Review this procedure before recommending further changes.\n\n'unreviewed_tweak' is outside this prototype's test catalogue.",
+      "source": "reviewed_guidance",
+      "model": null,
+      "prompt_version": null,
+      "word_count": 14,
+      "elapsed_s": 0.0
+    }
+  ]
+}

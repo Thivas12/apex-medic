@@ -1,0 +1,27 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+.neon
+*.pem
+*.key
+
+# Runtime data and evaluation output
+data/
+evaluation/runs/
+*.db
+*.db-*
+*.sqlite*
+*.log
+
+# Dependencies and caches
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db

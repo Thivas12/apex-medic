@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manage a case — ApexMedic</title>
+  <link rel="stylesheet" href="./manage.css">
+  <script src="./manage.js" defer></script>
+</head>
+<body>
+  <main>
+    <a class="back" href="./">← Back to ApexMedic</a>
+    <p class="eyebrow">YOUR SAVED DATA</p>
+    <h1>Manage a case</h1>
+    <p class="intro">Review a saved case before removing it from ApexMedic.</p>
+    <p id="feedback" role="status" aria-live="polite"></p>
+
+    <section class="panel" aria-labelledby="find-title">
+      <h2 id="find-title">Find your case</h2>
+      <p>Use the browser where you created the case. You’ll need its case ID.</p>
+      <form id="lookup-form">
+        <label for="case-id">Case ID</label>
+        <div class="lookup-row">
+          <input id="case-id" name="case_id" maxlength="100" required autocomplete="off" spellcheck="false">
+          <button id="review-button" type="submit">Review case</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="preview" class="panel" aria-labelledby="preview-title" hidden>
+      <p class="eyebrow">REVIEW BEFORE DELETING</p>
+      <h2 id="preview-title">Your case</h2>
+      <p id="preview-id" class="case-id"></p>
+      <p id="description" class="description"></p>
+      <p id="case-meta"></p>
+      <dl class="counts">
+        <div><dt>Observations</dt><dd id="observation-count"></dd></div>
+        <div><dt>Test results</dt><dd id="test-count"></dd></div>
+        <div><dt>History entries</dt><dd id="history-count"></dd></div>
+      </dl>
+      <div class="notice">
+        <strong>Deleting removes this case and its evidence history from the active app.</strong>
+        <p>You cannot undo this in the app. Existing backup copies are not removed.</p>
+      </div>
+      <form id="delete-form">
+        <label for="confirm-id">Type the full case ID to confirm</label>
+        <input id="confirm-id" name="confirm_case_id" maxlength="100" required autocomplete="off" spellcheck="false" aria-describedby="confirmation-help">
+        <p id="confirmation-help" class="help">The ID must match the case shown above.</p>
+        <div class="actions">
+          <button id="delete-button" class="danger" type="submit" disabled>Delete this case</button>
+          <button id="cancel-button" class="secondary" type="button">Cancel</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

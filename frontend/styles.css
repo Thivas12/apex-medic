@@ -1,0 +1,123 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, sans-serif;
+  background: #10151d;
+  color: #eef2f7;
+}
+
+* { box-sizing: border-box; }
+
+[hidden] { display: none !important; }
+
+body { margin: 0; }
+
+main {
+  max-width: 960px;
+  margin: auto;
+  padding: 28px 20px 60px;
+}
+
+h1 { margin: 0; font-size: 2.5rem; }
+h2, h3 { margin-top: 0; }
+
+p {
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+}
+
+section {
+  background: #19222e;
+  border: 1px solid #354459;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+
+article {
+  background: #10151d;
+  border-left: 4px solid #f26672;
+  padding: 20px;
+  margin: 24px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.grid section { margin: 0; }
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.muted { color: #b6c2d2; }
+
+label {
+  display: block;
+  margin: 14px 0 7px;
+}
+
+input, select, textarea, button { font: inherit; }
+
+input, select, textarea {
+  width: 100%;
+  background: #10151d;
+  color: inherit;
+  border: 1px solid #63748b;
+  padding: 11px;
+  border-radius: 6px;
+}
+
+textarea { resize: vertical; }
+
+button {
+  margin: 16px 0 0;
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 6px;
+  background: #b42338;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: .55;
+  cursor: wait;
+}
+
+button:hover:not(:disabled) { background: #d43149; }
+
+:focus-visible {
+  outline: 3px solid #8fcaff;
+  outline-offset: 3px;
+}
+
+form + form, details {
+  border-top: 1px solid #354459;
+  margin-top: 28px;
+  padding-top: 24px;
+}
+
+a { color: #8fcaff; }
+summary { cursor: pointer; }
+li { margin: 18px 0; }
+
+#notice { padding: 12px 0; }
+#notice[data-error="true"] { color: #ffb4a8; }
+
+@media (max-width: 650px) {
+  .grid { grid-template-columns: 1fr; }
+  section { padding: 18px; }
+}
+
+#apex-case-data-tools {
+  max-width: 920px;
+  margin: 24px auto;
+  padding: 0 24px 32px;
+}

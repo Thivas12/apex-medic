@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ApexMedic · Connection troubleshooting</title>
+  <meta name="description" content="Evidence-driven Apex Legends troubleshooting with saved case history and reviewed guidance.">
+  <link rel="stylesheet" href="/ui/styles.css">
+  <script src="/ui/app.js" defer></script>
+</head>
+<body>
+<main>
+  <header>
+    <p class="muted">CONNECTION TROUBLESHOOTING PROTOTYPE</p>
+    <h1>ApexMedic</h1>
+    <p>Work through one troubleshooting step at a time.</p>
+  </header>
+
+  <p id="notice" role="status" aria-live="polite">
+    Create a case or open an existing one.
+  </p>
+
+  <button id="retry" type="button" hidden>
+    Retry saved submission
+  </button>
+
+  <div class="grid">
+    <section>
+      <h2>Start a case</h2>
+
+      <form id="create-form">
+        <label for="description">What is happening?</label>
+        <textarea
+          id="description"
+          required
+          maxlength="4000"
+          rows="3"
+        ></textarea>
+
+        <label for="origin">Case type</label>
+        <select id="origin">
+          <option value="synthetic">Synthetic demo</option>
+          <option value="user_report">Player report</option>
+        </select>
+
+        <label for="connection">Connection</label>
+        <select id="connection">
+          <option value="unknown">Not sure</option>
+          <option value="ethernet">Ethernet</option>
+          <option value="wifi">Wi-Fi</option>
+        </select>
+
+        <button type="submit">Create case</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Open a case</h2>
+
+      <form id="open-form">
+        <label for="open-id">Case ID</label>
+        <input
+          id="open-id"
+          required
+          maxlength="100"
+          placeholder="Paste the ID of a case created in this browser"
+        >
+        <button type="submit">Open case</button>
+      </form>
+
+      <p class="muted">
+        Keep your case ID and use this browser to reopen it. Access lasts up to 30 days from the first case in this session. Clearing cookies or using another browser loses access. Recovery is not available yet.
+      </p>
+    </section>
+  </div>
+
+  <section id="case-panel" hidden>
+    <div class="row">
+      <h2>Your case</h2>
+      <button id="refresh" type="button">Refresh</button>
+    </div>
+
+    <p id="case-meta" class="muted"></p>
+    <p id="case-description"></p>
+    <p id="latest-reading"></p>
+
+    <article>
+      <h3 id="next-kind">Next step</h3>
+      <p id="next-message"></p>
+      <p id="next-reason" class="muted"></p>
+
+      <div id="guidance-panel" hidden>
+        <h3>Supporting guidance</h3>
+        <div id="guidance"></div>
+      </div>
+
+      <button id="explain-step" type="button">
+        Explain this step
+      </button>
+      <p
+        id="explanation-status"
+        class="muted"
+        role="status"
+        aria-live="polite"
+      ></p>
+      <p id="model-explanation"></p>
+    </article>
+
+    <form id="answer-form" hidden>
+      <h3>Describe the symptom</h3>
+
+      <label for="symptom">What have you observed?</label>
+      <select id="symptom" required>
+        <option value="">Choose a symptom</option>
+        <option value="packet_loss">Packet-loss readings</option>
+        <option value="high_latency">High latency</option>
+        <option value="rubber_banding">Rubber-banding</option>
+      </select>
+
+      <button type="submit">Save answer</button>
+    </form>
+
+    <form id="reading-form" hidden>
+      <h3>Record match readings</h3>
+
+      <p class="muted">
+        Leave unmeasured values blank.
+        Enter 0 only if the display showed zero.
+      </p>
+
+      <label for="context">When and under what conditions?</label>
+      <input id="context" required maxlength="2000">
+
+      <div class="grid">
+        <div>
+          <label for="latency">Latency (ms)</label>
+          <input id="latency" type="number" min="0" step="any">
+        </div>
+
+        <div>
+          <label for="loss">Packet loss (%)</label>
+          <input id="loss" type="number" min="0" max="100" step="any">
+        </div>
+
+        <div>
+          <label for="fps">FPS</label>
+          <input id="fps" type="number" min="0" step="any">
+        </div>
+      </div>
+
+      <button type="submit">Save readings</button>
+    </form>
+
+    <form id="test-form" hidden>
+      <h3>Record a test result</h3>
+      <p id="test-name"></p>
+
+      <label for="conditions">
+        What did you compare and keep unchanged?
+      </label>
+      <textarea
+        id="conditions"
+        required
+        maxlength="2000"
+        rows="2"
+      ></textarea>
+
+      <label for="outcome">Outcome</label>
+      <select id="outcome" required>
+        <option value="">Choose an outcome</option>
+        <option value="improved">Improved</option>
+        <option value="unchanged">Unchanged</option>
+        <option value="worsened">Worsened</option>
+        <option value="inconclusive">Inconclusive</option>
+      </select>
+
+      <label for="notes">Readings and remaining symptoms</label>
+      <textarea
+        id="notes"
+        required
+        maxlength="4000"
+        rows="3"
+      ></textarea>
+
+      <button type="submit">Save test result</button>
+    </form>
+
+    <details>
+      <summary>Updates recorded after case creation</summary>
+      <ol id="history"></ol>
+    </details>
+  </section>
+</main>
+
+<nav id="apex-case-data-tools" aria-label="Case data tools">
+  <a href="./manage.html">Manage or delete a saved case</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,16 @@
+[
+  {
+    "source_id": "ea_connection_guide",
+    "title": "Troubleshoot high ping, packet loss, and lag in Apex Legends",
+    "url": "https://help.ea.com/en/articles/apex-legends/troubleshoot-ping-packet-loss-lag/",
+    "publisher": "EA Help",
+    "source_type": "official_guidance",
+    "reviewed_on": "2026-11-09",
+    "topics": [
+      "performance_display",
+      "latency",
+      "packet_loss",
+      "data_center_selection"
+    ]
+  }
+]

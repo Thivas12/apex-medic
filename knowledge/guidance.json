@@ -1,0 +1,60 @@
+[
+  {
+    "card_id": "performance_display",
+    "action_ids": [
+      "collect_performance_readings",
+      "capture_affected_period"
+    ],
+    "title": "Find the in-game measurements",
+    "basis": "official_guidance",
+    "text": "In Apex settings, open Gameplay and enable Performance Display to see FPS, latency and packet loss.",
+    "source_ids": ["ea_connection_guide"]
+  },
+  {
+    "card_id": "data_center_selection",
+    "action_ids": ["compare_data_centers"],
+    "title": "Choose a nearby data centre",
+    "basis": "official_guidance",
+    "text": "Before entering the lobby, use the Data Center option on the launch screen to choose a nearby location.",
+    "source_ids": ["ea_connection_guide"]
+  },
+  {
+    "card_id": "background_traffic",
+    "action_ids": ["compare_background_traffic"],
+    "title": "Consider connection activity",
+    "basis": "official_guidance",
+    "text": "EA lists wireless connections, shared Wi-Fi traffic and background applications among possible contributors to connection problems.",
+    "source_ids": ["ea_connection_guide"]
+  },
+  {
+    "card_id": "comparable_sessions",
+    "action_ids": [
+      "compare_data_centers",
+      "compare_background_traffic"
+    ],
+    "title": "Make the comparison useful",
+    "basis": "project_policy",
+    "text": "Change one factor at a time. Record the conditions and readings before and after the change. An improvement does not by itself establish the underlying cause.",
+    "source_ids": []
+  },
+  {
+    "card_id": "repeat_verification",
+    "action_ids": [
+      "verify_improvement"
+    ],
+    "title": "Check whether improvement repeats",
+    "basis": "project_policy",
+    "text": "Compare another similar session with the original affected baseline. Record any remaining symptoms. Repeated reported improvement does not establish a root cause or automatically resolve the case.",
+    "source_ids": []
+  },
+  {
+  "card_id": "verification_review",
+  "action_ids": [
+    "review_verification"
+  ],
+  "title": "Review verification findings",
+  "basis": "project_policy",
+  "text": "Summarise the recorded verification result and any remaining symptoms. Distinguish reported improvement from measured changes. Repeated reported improvement does not establish the underlying cause or automatically resolve the case.",
+  "source_ids": []
+}
+]

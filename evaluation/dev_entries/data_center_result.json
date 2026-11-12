@@ -1,0 +1,6 @@
+{
+    "outcome":  "improved",
+    "test_id":  "compare_data_centers",
+    "conditions":  "Synthetic comparison using the same wired connection",
+    "notes":  "Synthetic result; improvement does not confirm the cause."
+}

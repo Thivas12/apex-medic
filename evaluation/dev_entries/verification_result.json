@@ -1,0 +1,6 @@
+{
+    "outcome":  "improved",
+    "test_id":  "verify_improvement",
+    "conditions":  "Synthetic comparable session, measured against the original affected baseline",
+    "notes":  "Synthetic repeated improvement; the underlying cause remains unknown."
+}

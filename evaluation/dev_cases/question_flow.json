@@ -1,0 +1,18 @@
+{
+    "case_id":  "dev_002",
+    "origin":  "synthetic",
+    "platform":  "windows_pc",
+    "symptom":  "unknown",
+    "player_description":  "Other games seem fine, but players teleport in Apex.",
+    "connection_type":  "ethernet",
+    "data_center":  null,
+    "onset":  null,
+    "observations":  [
+
+                     ],
+    "completed_tests":  [
+
+                        ],
+    "confirmed_cause":  null,
+    "status":  "investigating"
+}

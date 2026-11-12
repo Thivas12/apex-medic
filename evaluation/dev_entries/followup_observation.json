@@ -1,0 +1,7 @@
+{
+    "latency_ms":  52,
+    "context":  "Synthetic follow-up measurement",
+    "packet_loss_pct":  2,
+    "source":  "player_report",
+    "fps":  144
+}
